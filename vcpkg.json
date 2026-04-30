@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "glfw3",
+        "glm",
+        "spdlog",
+        "sdl3",
+	"sdl3-image",
+	"sdl3-mixer",
+	"sdl3-ttf"
+    ]
+}
+	

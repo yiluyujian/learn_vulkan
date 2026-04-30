@@ -1,0 +1,7 @@
+.cache
+.vscode
+build
+bin
+CMakePresets.json
+compile_commands.json
+vcpkg_installed
