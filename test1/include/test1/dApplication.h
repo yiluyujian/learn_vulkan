@@ -18,10 +18,10 @@ struct QueueFamilyIndices
 
 class HelloTriangleApplication
 {
-public:
+  public:
     void run();
 
-private:
+  private:
     void initWindow();
     void initVulkan();
     void mainLoop();
@@ -40,11 +40,12 @@ private:
                                                         VkDebugUtilsMessageTypeFlagsEXT messageType,
                                                         const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData,
                                                         void *pUserData);
-    
-private:
+
+  private:
     GLFWwindow *m_window;
     VkInstance m_instance;
     VkDebugUtilsMessengerEXT m_debugMessenger;
     VkPhysicalDevice m_physicalDevice = VK_NULL_HANDLE;
     VkDevice m_device;
+    VkQueue m_graphicsQueue;
 };
