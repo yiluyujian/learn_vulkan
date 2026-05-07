@@ -9,10 +9,11 @@ const std::vector<const char *> validationLayers = {"VK_LAYER_KHRONOS_validation
 struct QueueFamilyIndices
 {
     std::optional<uint32_t> graphicaFamily;
+    std::optional<uint32_t> presentFamily;
 
     bool isComplete()
     {
-        return graphicaFamily.has_value();
+        return graphicaFamily.has_value() && presentFamily.has_value();
     }
 };
 
@@ -28,6 +29,7 @@ class HelloTriangleApplication
     void cleanup();
     void createInstance();
     void setupDebugMessenger();
+    void createSurface();
     void pickPhysicalDevice();
     void createLogicalDevice();
 
@@ -48,4 +50,6 @@ class HelloTriangleApplication
     VkPhysicalDevice m_physicalDevice = VK_NULL_HANDLE;
     VkDevice m_device;
     VkQueue m_graphicsQueue;
+    VkQueue m_presentQueue;
+    VkSurfaceKHR m_surface;
 };
